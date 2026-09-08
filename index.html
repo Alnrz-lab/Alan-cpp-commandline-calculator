@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Alan's Calculator — quick arithmetic with two integers."
+    />
+    <title>Alan's Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Alan's Calculator home">
+          <span class="brand-mark" aria-hidden="true">+</span>
+          <span>Alan's Calculator</span>
+        </a>
+        <span class="version-label">FIVE FUNCTIONS / TWO INTEGERS</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> SIMPLE BY DESIGN</p>
+          <h1 id="page-title">Make the<br /><em>numbers</em> work.</h1>
+          <p class="intro">
+            Pick an operation, enter two integers, and get a clear answer.
+            No distractions, just arithmetic.
+          </p>
+        </div>
+        <div class="hero-badge" aria-hidden="true">
+          <span class="badge-number">01</span>
+          <span class="badge-rule"></span>
+          <span class="badge-caption">CALCULATE<br />WITH INTENTION</span>
+        </div>
+      </section>
+
+      <section class="calculator-card" aria-labelledby="calculator-title">
+        <div class="card-heading">
+          <div>
+            <p class="section-kicker">THE WORKSPACE</p>
+            <h2 id="calculator-title">Choose your operation</h2>
+          </div>
+          <span class="step-count">01 <span>/</span> 03</span>
+        </div>
+
+        <div class="operation-grid" role="group" aria-label="Arithmetic operations">
+          <button class="operation-button active" type="button" data-operation="add">
+            <span class="operation-symbol">+</span>
+            <span class="operation-name">Addition</span>
+            <span class="operation-hint">Add together</span>
+          </button>
+          <button class="operation-button" type="button" data-operation="subtract">
+            <span class="operation-symbol">−</span>
+            <span class="operation-name">Subtraction</span>
+            <span class="operation-hint">Find the difference</span>
+          </button>
+          <button class="operation-button" type="button" data-operation="multiply">
+            <span class="operation-symbol">×</span>
+            <span class="operation-name">Multiplication</span>
+            <span class="operation-hint">Multiply values</span>
+          </button>
+          <button class="operation-button" type="button" data-operation="divide">
+            <span class="operation-symbol">÷</span>
+            <span class="operation-name">Division</span>
+            <span class="operation-hint">Divide evenly</span>
+          </button>
+          <button class="operation-button" type="button" data-operation="modulus">
+            <span class="operation-symbol">%</span>
+            <span class="operation-name">Modulus</span>
+            <span class="operation-hint">Find the remainder</span>
+          </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <form id="calculator-form" novalidate>
+          <div class="card-heading input-heading">
+            <div>
+              <p class="section-kicker">THE INPUT</p>
+              <h2>Enter two integers</h2>
+            </div>
+            <span class="step-count">02 <span>/</span> 03</span>
+          </div>
+
+          <div class="inputs-row">
+            <label class="number-field">
+              <span class="field-label">First number</span>
+              <span class="field-input-wrap">
+                <span class="field-index">01</span>
+                <input id="first-number" name="first-number" type="number" step="1" inputmode="numeric" placeholder="0" required />
+              </span>
+            </label>
+            <span class="operator-preview" aria-hidden="true">+</span>
+            <label class="number-field">
+              <span class="field-label">Second number</span>
+              <span class="field-input-wrap">
+                <span class="field-index">02</span>
+                <input id="second-number" name="second-number" type="number" step="1" inputmode="numeric" placeholder="0" required />
+              </span>
+            </label>
+          </div>
+
+          <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
+
+          <div class="form-footer">
+            <p class="helper-text">Only whole numbers are accepted.</p>
+            <button class="calculate-button" type="submit">
+              <span>Calculate result</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="result-panel" id="result-panel" aria-live="polite">
+          <div class="card-heading result-heading">
+            <div>
+              <p class="section-kicker">THE ANSWER</p>
+              <h2>Your result</h2>
+            </div>
+            <span class="step-count">03 <span>/</span> 03</span>
+          </div>
+          <div class="result-content">
+            <p class="equation" id="equation">—</p>
+            <p class="result-value" id="result-value">Ready when you are.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>Built for clear thinking.</span>
+        <span>© <span id="current-year"></span> Alan's Calculator</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
